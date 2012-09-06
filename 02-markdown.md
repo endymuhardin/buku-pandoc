@@ -12,7 +12,11 @@ Diterjemahkan secara bebas sebagai berikut.
 > Dokumen berformat Markdown harus bisa diterbitkan apa adanya dalam bentuk _plain text_,
 > tanpa terlihat bahwa dokumen tersebut sudah dihiasi perintah formatting tertentu.
 
-Versi Markdown asli dari John Gruber memiliki beberapa kekurangan, diantaranya dia tidak menjelaskan bagaimana cara membuat tabel. Selain versi John Gruber, ada juga versi lain seperti MultiMarkdown dan Pandoc. 
+Versi Markdown asli dari John Gruber memiliki beberapa kekurangan, 
+diantaranya dia tidak menjelaskan 
+bagaimana cara membuat tabel. 
+Selain versi John Gruber, 
+ada juga versi lain seperti MultiMarkdown dan Pandoc. 
 
 Kita akan menggunakan versi Pandoc yang lebih lengkap, karena sudah mendukung:
 
@@ -40,7 +44,7 @@ Atx-header diawali oleh satu sampai enam tanda `#`. Berikut contohnya:
     
     ## Sub bab 1.1
     
-    ## Subnya sub bab 1.1.1
+    ### Subnya sub bab 1.1.1
 
 Kita boleh menambahkan akhiran `#` ataupun menghilangkannya. Contoh berikut:
 
@@ -104,12 +108,27 @@ Untuk menampilkan kode program, kita menggunakan tiga backtick (`), seperti ini:
     ```
     System.out.println("Halo dunia");
     ```
+
+Ini akan menghasilkan tampilan seperti ini:
+
+```
+System.out.println("Halo dunia");
+```
     
 Kita bisa mengaktifkan _syntax highlighting_ dengan mencantumkan jenis bahasa pemrograman yang digunakan.
 
     ```java
     System.out.println("Halo dunia");
     ```
+
+Ini akan menghasilkan tampilan seperti ini:
+
+```java
+System.out.println("Halo dunia");
+```
+
+Kalau kita output menjadi PDF, contoh kedua ini akan 
+diwarnai sesuai keyword bahasa pemrograman yang dipilih.
 
 ## List dan Nomor ##
 
@@ -141,7 +160,18 @@ Kita juga bisa membuat list di dalam list, seperti ini:
         + kangkung
         + bayam
 
-Syaratnya, list level kedua harus diindentasi 4 spasi.
+Syaratnya, list level kedua harus diindentasi 4 spasi. Contoh di atas akan menghasilkan tampilan seperti ini:
+
+* buah
+    + apel
+    + mangga
+        - indramayu
+        - harum manis
+    + durian
+  
+* sayur
+    + kangkung
+    + bayam
 
 ### Nomor ###
 
@@ -177,6 +207,16 @@ Selain menggunakan angka arab, kita juga bisa menggunakan huruf dan angka romawi
 Baris yang memuat tiga atau lebih karakter `*`, `-`, atau `_` 
 secara berturut-turut (boleh diselingi spasi) 
 akan dikonversi menjadi garis mendatar.
+
+Contohnya sebagai berikut:
+
+    ***
+    halo
+    - - -
+
+akan menghasilkan output seperti ini:
+
+***
 
 ## Tabel ##
 
@@ -275,7 +315,12 @@ Untuk membuat *huruf miring*, gunakan karakter `*` atau `_`. Contohnya:
 
     Penulisan kode program di Java adalah _case sensitive_.
     Berbeda dengan SQL yang *case insensitive*.
-    
+
+Contoh di atas akan menghasilkan tampilan seperti ini:
+
+> Penulisan kode program di Java adalah _case sensitive_.
+Berbeda dengan SQL yang *case insensitive*.
+
 ### Huruf Tebal ###
 
 Huruf **tebal** sama dengan huruf miring, tapi menggunakan dua karakter.
@@ -284,6 +329,10 @@ Contohnya:
     Penulisan kode program di Java adalah __case sensitive__.
     Berbeda dengan SQL yang **case insensitive**.
 
+Contoh di atas akan menghasilkan tampilan seperti ini:
+
+> Penulisan kode program di Java adalah __case sensitive__.
+Berbeda dengan SQL yang **case insensitive**.
 
 ### Strikeout ###
 Untuk menulis ~~correction~~ koreksi, gunakan \~\~ seperti ini: 
@@ -298,4 +347,82 @@ Verbatim artinya apa adanya, tidak dikonversi menjadi apapun. Untuk membuat verb
 
 ## Link ##
 
+Untuk menampilkan link ke website tertentu, formatnya seperti ini:
+
+    Silahkan lihat ke 
+    [website saya](http://software.endy.muhardin.com/about "Websitenya Endy") 
+    untuk informasi lebih lengkap.
+
+Ada tiga bagian untuk membuat link, yaitu:
+
+1. Tulisan yang akan diberi link. Ditulis di dalam kurung kotak `[]`
+2. URL untuk link tersebut, ditulis dalam tanda kurung biasa `()`
+3. Judul link, ditulis dalam tanda kurung, setelah URL, dilengkapi dengan tanda kutip ganda. Judul link ini optional, boleh ada ataupun tidak.
+
+Contoh di atas akan menghasilkan output seperti ini:
+
+> Silahkan lihat ke 
+> [website saya](http://software.endy.muhardin.com/about "Websitenya Endy") 
+> untuk informasi lebih lengkap.
+
 ## Image ##
+
+Menampilkan image mirip dengan link. Bedanya, di depan kurung kotak kita berikan tanda seru. Contohnya menggunakan relative path seperti ini:
+
+    ![logo artivisi](resources/logo.png)
+
+Contoh di atas akan menghasilkan tampilan seperti ini: 
+
+![logo artivisi](./resources/logo-artivisi.png)
+
+
+## Catatan kaki ##
+
+Catatan kaki ditulis seperti ini:
+
+    Tulisan ini ada catatan kakinya,[^1] dan ini juga.[^longnote]
+
+    [^1]: Catatan kaki nomer satu.
+
+    [^longnote]: Catatan kaki panjang multi baris.
+
+        Paragraf berikutnya diindentasi untuk menunjukkan
+        bahwa dia bagian dari catatan kaki di atasnya.
+
+            { contoh kode program }
+
+        Indentasi boleh di baris pertama saja atau 
+        di seluruh paragraf
+
+    Paragraf ini tidak termasuk catatan kaki, karena tidak diindentasi.
+
+Contoh di atas akan menghasilkan tampilan sebagai berikut:
+
+***
+
+Tulisan ini ada catatan kakinya,[^1] dan ini juga.[^longnote]
+
+[^1]: Catatan kaki nomer satu.
+
+[^longnote]: Catatan kaki panjang multi baris.
+
+    Paragraf berikutnya diindentasi untuk menunjukkan
+    bahwa dia bagian dari catatan kaki di atasnya.
+
+        { contoh kode program }
+
+    Indentasi boleh di baris pertama saja atau 
+    di seluruh paragraf
+
+Paragraf ini tidak termasuk catatan kaki, karena tidak diindentasi.
+
+***
+
+Catatan kaki perlu diberikan identifier, yaitu label berawalan `^` di dalam kurung kotak. Identifier ini tidak boleh mengandung spasi, tab, atau ganti baris. Identifier hanya digunakan untuk menghubungkan titik referensi dengan catatan kakinya. Sedangkan penomoran di outputnya akan dihitung otomatis.
+
+## Referensi dan Bibliografi ##
+
+Pandoc juga mendukung referensi (citation) ke tulisan orang lain, seperti yang biasa dicantumkan sebagai daftar pustaka. Ini biasanya digunakan kalau kita membuat tulisan ilmiah seperti jurnal, skripsi, atau thesis. 
+
+Untuk lebih jelasnya, bisa dilihat di dokumentasi pandoc.
+
