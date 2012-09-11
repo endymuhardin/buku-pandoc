@@ -337,7 +337,8 @@ Berbeda dengan SQL yang **case insensitive**.
 ### Strikeout ###
 Untuk menulis ~~correction~~ koreksi, gunakan \~\~ seperti ini: 
 
-    Kelemahan Spring Framework adalah ~~keharusan untuk menulis file xml yang banyak~~.
+    Kelemahan Spring Framework adalah 
+    ~~keharusan untuk menulis file xml yang banyak~~.
 
 ### Verbatim ###
 
