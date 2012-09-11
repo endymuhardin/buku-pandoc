@@ -370,7 +370,7 @@ Contoh di atas akan menghasilkan output seperti ini:
 
 Menampilkan image mirip dengan link. Bedanya, di depan kurung kotak kita berikan tanda seru. Contohnya menggunakan relative path seperti ini:
 
-    ![logo artivisi](resources/logo.png)
+    ![logo artivisi](resources/logo-artivisi.png)
 
 Contoh di atas akan menghasilkan tampilan seperti ini: 
 
