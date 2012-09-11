@@ -26,5 +26,3 @@
 # Terima kasih #
 
 ![](../resources/logo-artivisi.png)
-
-
