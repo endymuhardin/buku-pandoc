@@ -75,6 +75,14 @@ pandoc -s -t s5 -o slide.html menggunakan-pandoc.md
 
 Setelah itu, file `slide.html` yang dihasilkan bisa diedit, isi tag `<head></head>` diganti dengan yang ada di dalam custom theme dari S5 Reloaded.
 
+
+Supaya _bullet point_ tampil satu persatu, kita perlu memberikan opsi `-i` yaitu incremental.
+
+```
+pandoc -s --self-contained -i -t s5 -o slide.html menggunakan-pandoc.md
+```
+
+
 ## Open Office ##
 
 Untuk menghasilkan file OpenOffice Writer, perintahnya adalah sebagai berikut:
