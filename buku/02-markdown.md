@@ -53,7 +53,9 @@ Kita boleh menambahkan akhiran `#` ataupun menghilangkannya. Contoh berikut:
 sama dengan ini:
 
     # Bab 1 #
-    
+
+### Pemberian ID untuk Header ###
+
 Pada waktu dikonversi menjadi HTML, tiap header akan diberikan id supaya bisa dijadikan tautan. 
 Berikut aturan pemberian id:
 
@@ -348,6 +350,18 @@ Verbatim artinya apa adanya, tidak dikonversi menjadi apapun. Untuk membuat verb
 
 ## Link ##
 
+### Link Otomatis ###
+
+Markdown bisa mengkonversi tulisan menjadi link secara otomatis, asal diapit oleh kurung siku. 
+Berikut contohnya:
+
+    <http://software.endy.muhardin.com>
+    <endy.muhardin@gmail.com>
+
+### Inline Link ###
+
+Link dan URL yang dituju bisa langsung digabungkan dalam satu bagian.
+
 Untuk menampilkan link ke website tertentu, formatnya seperti ini:
 
     Silahkan lihat ke 
@@ -365,6 +379,35 @@ Contoh di atas akan menghasilkan output seperti ini:
 > Silahkan lihat ke 
 > [website saya](http://software.endy.muhardin.com/about "Websitenya Endy") 
 > untuk informasi lebih lengkap.
+
+### Reference Link ###
+Kita juga bisa memisahkan antara link dan URL yang dituju dengan format berikut:
+
+    [link label][id link]
+
+Dengan cara di atas, URL yang dituju tidak langsung ditulis di sebelah labelnya.
+Kita harus sediakan referensi URL yang dituju di bagian lain dokumen (biasanya di akhir) seperti ini:
+
+    [id link]: http://url-yang-dituju.com "Judul Linknya"
+    
+Id link bisa dihilangkan, sehingga id link sama dengan labelnya, seperti ini:
+
+    Silahkan kunjungi [website saya]
+
+Di akhir dokumen, sertakan referensinya:
+
+    [website saya]: http://software.endy.muhardin.com "Websitenya Endy"
+
+
+### Inline Link ###
+
+Kita bisa membuat link ke bagian lain dokumen, misalnya `heading`. 
+Seperti sudah kita bahas di bagian [Pemberian ID untuk Header](#pemberian-id-untuk-header), 
+pandoc akan membuatkan id untuk setiap heading yang kita definisikan.
+
+Berikut contohnya:
+
+    Silahkan lihat bagian [Inline Formatting](#inline-formatting).
 
 ## Image ##
 
