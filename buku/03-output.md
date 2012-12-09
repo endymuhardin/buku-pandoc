@@ -53,6 +53,29 @@ pandoc \
 --latex-engine=xelatex --toc -N -o hasil.pdf *md
 ```
 
+Khusus PDF, biasanya kita menginginkan tampilan cetak yang rapi dan bagus. 
+Layout otomatis yang disediakan LaTeX kadangkala kurang baik dalam mengatur penempatan gambar, 
+sehingga seringkali gambar tampil meleset tidak sesuai dengan urutan tulisan yang disebabkan karena pengaturan _page break_. 
+Untuk itu, kita membutuhkan pengaturan manual. Caranya adalah dengan menambahkan perintah LaTeX seperti ini:
+
+```
+Paragraf pertama
+\newpage
+Paragraf ini akan ditulis di halaman baru
+```
+
+Ini dijelaskan oleh John MacFarlane melalui email
+
+> There’s no general way to force page breaks, by the way. 
+> If you just want page breaks in PDF (via latex), you can insert a raw latex command,
+
+```
+\newpage
+```
+
+> This should be ignored in HTML and ODT output, so it will only affect latex and PDF via latex.
+
+Perintah `\newpage` ini akan diabaikan bila kita menghasilkan output HTML dan ODT.
 
 ## Slide Presentasi ##
 
