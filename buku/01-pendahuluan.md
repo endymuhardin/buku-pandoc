@@ -29,13 +29,13 @@ Ada beberapa format yang memenuhi kriteria tersebut, diantaranya:
 * html
 * markdown
 * docbook
-* latex
+* \LaTeX
 
 Aplikasi Office baik Microsoft maupun Open langsung gugur pada babak pertama ini karena formatnya bukan text.
 
 Selanjutnya, kriteria kedua adalah mudah dipahami. Pekerjaan membuat dokumentasi di ArtiVisi biasanya diserahkan ke anak magang. Untuk itu, kita harus bisa mengajarkan sistem dokumentasi ini dengan cepat, karena tingkat turnover anak magang relatif singkat. Jangan sampai terjadi, masa magangnya cuma 3 bulan, 2 minggu dihabiskan untuk belajar sistem dokumentasi. 
 
-Dari empat kandidat di atas, LaTeX gugur karena dia relatif sulit dipelajari. Tinggal tersisa tiga kontestan. Kita lanjutkan ke babak selanjutnya.
+Dari empat kandidat di atas, \LaTeX gugur karena dia relatif sulit dipelajari. Tinggal tersisa tiga kontestan. Kita lanjutkan ke babak selanjutnya.
 
 Kriteria ketiga adalah kemampuan konversi ke berbagai format lain. Kita ingin konversi ke PDF agar bisa dicetak. Kita juga ingin bisa konversi ke HTML agar bisa dipublish di internet. Di jaman modern ini, perlu juga kemampuan konversi menjadi format buku digital (epub). Selain itu, kadangkala perlu juga konversi ke format OpenOffice atau MS Office. 
 
@@ -84,7 +84,7 @@ Di ArtiVisi, kami banyak menulis buku, modul pelatihan, slide presentasi, user m
 Buku ini bisa bermanfaat buat: 
 
 * Karyawan / magang di ArtiVisi yang ditugaskan membuat buku, modul pelatihan, slide presentasi, user manual, dan sebagainya.
-* Guru, dosen, atau mahasiswa yang ingin membuat skripsi, thesis, atau tulisan ilmiah lainnya. Dengan Pandoc, dokumen Markdown bisa dikonversi menjadi LaTeX, yaitu format dokumen yang lazim digunakan untuk membuat tulisan ilmiah. Format LaTeX ini [jauh lebih superior daripada word processor seperti MS Word atau OpenOffice Writer](http://ricardo.ecn.wfu.edu/~cottrell/wp.html).
+* Guru, dosen, atau mahasiswa yang ingin membuat skripsi, thesis, atau tulisan ilmiah lainnya. Dengan Pandoc, dokumen Markdown bisa dikonversi menjadi \LaTeX, yaitu format dokumen yang lazim digunakan untuk membuat tulisan ilmiah. Format \LaTeX ini [jauh lebih superior daripada word processor seperti MS Word atau OpenOffice Writer](http://ricardo.ecn.wfu.edu/~cottrell/wp.html).
 
 
 ### Lisensi ###
@@ -112,7 +112,7 @@ Buku ini dibuat menggunakan perangkat pembantu :
 
 - Markdown : format text untuk menulis buku
 - Pandoc : aplikasi untuk mengkonversi markdown menjadi PDF atau HTML
-- LaTeX : format perantara dari Markdown menjadi PDF
+- \LaTeX : format perantara dari Markdown menjadi PDF
 
 ### Kontribusi ###
 
