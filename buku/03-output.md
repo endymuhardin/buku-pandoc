@@ -96,6 +96,23 @@ Oleh karena itu, kita ingin mengkonversi _hyperlink_ menjadi catatan kaki. Ini b
 pandoc -V links-as-notes -o hasil.pdf *.md
 ```
 
+### Tanpa Warna ###
+
+Adakalanya kita ingin hasil PDF yang tidak berwarna agar bisa dicetak tanpa tinta warna. 
+Penggunaan warna di printer yang hitam-putih akan menyebabkan warna huruf menjadi tidak hitam sempurna 
+sehingga dokumen sulit difotokopi. 
+Untuk itu, kita bisa menambahkan opsi `--no-highlight` agar kode program tidak diwarnai.
+Selain kode program, hyperlink juga biasanya diwarnai biru. 
+Kita bisa mengganti warna biru tersebut menjadi hitam melalui 
+variabel `linkcolor` dan `urlcolor`. Berikut perintah lengkapnya
+
+```
+pandoc \
+-V urlcolor=black \
+-V linkcolor=black \
+--no-highlight \
+-o markdown-dan-pandoc-bw.pdf *md
+```
 
 ## Slide Presentasi ##
 

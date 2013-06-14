@@ -420,12 +420,48 @@ Berikut contohnya:
 
 Menampilkan image mirip dengan link. Bedanya, di depan kurung kotak kita berikan tanda seru. Contohnya menggunakan relative path seperti ini:
 
-    ![logo artivisi](resources/logo-artivisi.png)
+    ![Logo ArtiVisi](resources/logo-artivisi.png)
 
 Contoh di atas akan menghasilkan tampilan seperti ini: 
 
-![logo artivisi](./resources/logo-artivisi.png)
+\begin{figure}[H]
+\centering
+\includegraphics{resources/logo-artivisi}
+\caption{Logo ArtiVisi}
+\end{figure}
 
+Bila kita perhatikan, gambar logo ArtiVisi di atas agak buram. 
+Berbeda dengan logo ArtiVisi di halaman paling depan. 
+Penyebabnya adalah karena resolusi gambar di atas hanya 90 dpi.
+Agar gambarnya tajam, resolusi idealnya adalah 300 dpi. 
+
+Hal ini perlu diperhatikan pada saat memasang screenshot. 
+Umumnya aplikasi pengambilan screenshot akan menghasilkan gambar 
+dengan resolusi 72 dpi, sehingga pasti akan terlihat lebih buram daripada logo di atas.
+Supaya gambar tampil dengan baik, kita perlu mengubah resolusinya menjadi 300 dpi.
+
+Ukuran gambar juga perlu disesuaikan agar tidak terlalu lebar ataupun terlalu kecil
+pada saat dikonversi menjadi dokumen PDF. Untuk PDF berukuran A4 dengan layout buku bawaan \LaTeX, 
+yaitu `\documentclass[a4]{book}`, ukuran gambar yang memenuhi satu halaman 
+kira-kira 1200 pixel lebarnya dan 1500 pixel tingginya. 
+
+Resolusi dan ukuran gambar bisa diedit menggunakan aplikasi pengolah gambar seperti Gimp atau Photoshop.
+Tapi perlu diperhatikan bahwa memperbesar resolusi dan ukuran akan membuat gambar menjadi buram.
+Untuk itu kita perlu melakukan tindakan lain seperti _sharpening_, pengaturan kontras, dan lainnya.
+
+Berikut tampilan screenshot yang diedit dalam Gimp.
+
+\begin{figure}[H]
+\centering
+\includegraphics{resources/setting-image}
+\caption{Setting Image dalam Gimp}
+\end{figure}
+
+Gambar di atas berukuran lebar 1200 pixel dan tinggi 741 pixel dengan resolusi 300dpi.
+
+Uraian di atas menjelaskan pada kita bahwa screenshot yang kita ambil 
+tidak bisa langsung dipasang begitu saja dalam dokumen.
+Kita harus melakukan pengeditan dulu dengan aplikasi pengolah gambar seperti Gimp atau Photoshop.
 
 ## Catatan kaki ##
 
