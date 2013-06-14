@@ -101,7 +101,14 @@ Dan bisa juga di tiap barisnya seperti ini:
     > anybody driving slower than you is an idiot, 
     > and anyone going faster than you is a maniac?
 
-Kecuali di awal file, kutipan harus didahului satu baris kosong.
+Kecuali di awal file, kutipan harus didahului satu baris kosong. 
+
+Berikut adalah contoh tampilan kutipan.
+
+> When you borrow five thousand from a bank and you can’t pay back, 
+> you’ve got a problem. 
+> When you borrow five million from a bank and you can’t pay back, 
+> they’ve got a problem.
 
 ## Kode Program ##
 
