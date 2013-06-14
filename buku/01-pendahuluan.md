@@ -113,7 +113,6 @@ Buku ini dibuat menggunakan perangkat pembantu :
 - Markdown : format text untuk menulis buku
 - Pandoc : aplikasi untuk mengkonversi markdown menjadi PDF atau HTML
 - LaTeX : format perantara dari Markdown menjadi PDF
-- Xetex : LaTeX engine untuk memproduksi PDF yang lebih indah
 
 ### Kontribusi ###
 
