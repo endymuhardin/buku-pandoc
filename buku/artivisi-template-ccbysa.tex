@@ -1,0 +1,190 @@
+\documentclass[a4]{$documentclass$}
+\usepackage[bahasa]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage{microtype}
+
+% use upquote if available, for straight quotes in verbatim environments
+\usepackage{upquote}
+
+\usepackage[utf8]{inputenc}
+\usepackage{eurosym}
+  
+$if(geometry)$
+    \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+$endif$
+
+$if(listings)$
+    \usepackage{listings}
+$endif$
+
+$if(highlighting-macros)$
+    $highlighting-macros$
+$endif$
+
+$if(verbatim-in-note)$
+    \usepackage{fancyvrb}
+$endif$
+
+$if(tables)$
+    \usepackage{longtable}
+$endif$
+
+$if(graphics)$
+    \usepackage{graphicx}
+
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
+$endif$
+
+\usepackage[unicode=true]{hyperref}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+$if(links-as-notes)$
+    % Make links footnotes instead of hotlinks:
+    \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+
+$if(strikeout)$
+    \usepackage[normalem]{ulem}
+    % avoid problems with \sout in headers with hyperref:
+    \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+
+$if(numbersections)$
+$else$
+    \setcounter{secnumdepth}{0}
+$endif$
+
+$if(verbatim-in-note)$
+    \VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+\usepackage{enumerate}
+
+$if(title)$
+\title{$title$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+
+% Header and Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\lhead{\itshape $title$}
+\chead{}
+\rhead{\itshape{\nouppercase{\leftmark}}}
+$if(version)$
+\lfoot{v$version$}
+$endif$
+\cfoot{}
+\rfoot{\thepage}
+
+% Judul Bab
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\bfseries\Large}
+    {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter} 
+    {1ex} 
+    {\titlerule\vspace{1ex}\filleft}[\vspace{1ex}\titlerule]
+
+$if(title)$
+\title{$title$}
+$endif$
+
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+$for(header-includes)$
+    $header-includes$
+$endfor$
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+\begin{titlepage}
+
+    \pagenumbering{gobble}
+
+    \begin{center}
+
+
+        % Logo
+        \includegraphics{./logo}\\[3cm]    
+
+        \textsc{\LARGE Seri Manajemen Proyek Software}\\[0.5cm]
+
+        % Title
+        \HRule \\[0.4cm]
+        { \huge \bfseries $title$}\\[0.4cm]
+
+        \HRule \\[0.5cm]
+
+        % Subtitle
+        \textsc{\Large Membuat dokumentasi dengan Markdown dan Pandoc}\\[2cm]
+
+        % sebelah kanan tampilkan informasi
+        \begin{minipage}{0.8\textwidth}
+            \begin{flushright} \large
+                $if(author)$
+                    \emph{$author$} \\
+                $endif$
+                
+                \emph{$date$} \\
+                
+                $if(version)$
+                    {Versi:} \textsc{$version$}
+                $endif$
+                
+            \end{flushright}
+        \end{minipage}
+
+        \vfill
+
+        % Bottom of the page
+        \includegraphics{./cc-by-sa} \\
+        {\large \copyright ~ \the\year ~ ArtiVisi Intermedia}
+    \end{center}
+
+\end{titlepage}
+
+$for(include-before)$
+    $include-before$
+$endfor$
+
+$if(toc)$
+{
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+}
+$endif$
+
+\newpage
+\pagenumbering{arabic}
+
+$body$
+
+
+$for(include-after)$
+    $include-after$
+$endfor$
+
+\end{document}

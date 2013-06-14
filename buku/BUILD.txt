@@ -1,0 +1,8 @@
+pandoc \
+--template artivisi-template-ccbysa.tex \
+--variable version=1.1 \
+-V documentclass=book \
+-V links-as-notes \
+--toc -N \
+-o markdown-dan-pandoc.pdf *md
+
