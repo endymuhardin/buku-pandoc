@@ -1,4 +1,4 @@
-\documentclass[a4]{$documentclass$}
+\documentclass[a4,11pt]{$documentclass$}
 \usepackage[bahasa]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{tgpagella}
@@ -30,19 +30,9 @@ $if(tables)$
     \usepackage{longtable}
 $endif$
 
-$if(graphics)$
-    \usepackage{graphicx}
-
-    % We will generate all images so they have a width \maxwidth. This means
-    % that they will get their normal width if they fit onto the page, but
-    % are scaled down if they would overflow the margins.
-    \makeatletter
-    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
-    \else\Gin@nat@width\fi}
-    \makeatother
-    \let\Oldincludegraphics\includegraphics
-    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
-$endif$
+\usepackage{graphicx}
+\usepackage{float}
+\restylefloat{figure}
 
 \usepackage[unicode=true]{hyperref}
 \hypersetup{breaklinks=true,
@@ -99,11 +89,11 @@ $endif$
 
 % Judul Bab
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-    {\bfseries\Large}
-    {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter} 
-    {1ex} 
-    {\titlerule\vspace{1ex}\filleft}[\vspace{1ex}\titlerule]
+\titleformat{\chapter}[hang]
+    {\Large\bfseries}
+    {\MakeUppercase{\chaptertitlename}\hspace{5pt}\thechapter\hspace{10pt}{\Huge{\textbar}}\hspace{5pt}}
+    {0pt}
+    {\Huge\bfseries}[\vspace{1ex}\titlerule]
 
 $if(title)$
 \title{$title$}
@@ -128,7 +118,7 @@ $endfor$
 
 
         % Logo
-        \includegraphics{./logo}\\[3cm]    
+        \includegraphics[width=4in]{./logo}\\[3cm]    
 
         \textsc{\LARGE Seri Manajemen Proyek Software}\\[0.5cm]
 

@@ -1,3 +1,4 @@
+PDF Normal 
 pandoc \
 --template artivisi-template-ccbysa.tex \
 --variable version=1.1 \
@@ -6,3 +7,14 @@ pandoc \
 --toc -N \
 -o markdown-dan-pandoc.pdf *md
 
+PDF Black & White
+pandoc \
+--template artivisi-template-ccbysa.tex \
+--variable version=1.1 \
+-V documentclass=book \
+-V links-as-notes \
+-V urlcolor=black \
+-V linkcolor=black \
+--no-highlight \
+--toc -N \
+-o markdown-dan-pandoc-bw.pdf *md
