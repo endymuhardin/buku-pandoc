@@ -25,6 +25,8 @@ supaya bisa ditampilkan dengan baik di text editor seperti Gedit atau Notepad++.
 
 ## PDF ##
 
+### Perintah Dasar ###
+
 Untuk menghasilkan file PDF, perintahnya adalah sebagai berikut:
 
 ```
@@ -38,7 +40,10 @@ Supaya bab dan sub-bab diberi nomer, sertakan opsi `-N`.
 pandoc --toc -N -o hasil.pdf *.md
 ```
 
-Khusus untuk dokumen ArtiVisi, biasanya saya sudah menyertakan template LaTeX tersendiri. 
+
+### Menggunakan \LaTeX Template ###
+
+Khusus untuk dokumen ArtiVisi, biasanya saya sudah menyertakan template \LaTeX tersendiri. 
 Template ini memiliki opsi untuk mengganti font dan menaruh nomer versi. 
 Kita membutuhkan engine Xetex agar template ini bisa digunakan. 
 Berikut perintahnya (jalankan dalam satu baris):
@@ -76,6 +81,19 @@ Ini dijelaskan oleh John MacFarlane melalui email
 > This should be ignored in HTML and ODT output, so it will only affect latex and PDF via latex.
 
 Perintah `\newpage` ini akan diabaikan bila kita menghasilkan output HTML dan ODT.
+
+### Link dan Catatan Kaki ###
+
+Secara default, semua _hyperlink_ yang kita tulis akan dibuat menjadi link yang bisa diklik di dokumen PDF yang dihasilkan. 
+Hal ini bagus bila PDF tersebut hanya kita baca di komputer, kalau kita ingin membuka linknya, kita tinggal klik saja dan browser akan terbuka.
+
+Tapi lain halnya bila kita ingin mencetak dokumen PDF tersebut. Semua link hanya akan menjadi tulisan berwarna biru. 
+Oleh karena itu, kita ingin mengkonversi _hyperlink_ menjadi catatan kaki. Ini bisa dilakukan dengan variabel `links-as-notes` seperti ini:
+
+```
+pandoc -V links-as-notes -o hasil.pdf *.md
+```
+
 
 ## Slide Presentasi ##
 
