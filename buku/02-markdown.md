@@ -60,7 +60,7 @@ Pada waktu dikonversi menjadi HTML, tiap header akan diberikan id supaya bisa di
 Berikut aturan pemberian id:
 
   - Semua formatting, link, dsb, dihilangkan.
-  - Semua tanda baca kecuali underscore, hyphen, dan titik.
+  - Semua tanda baca dihapus kecuali underscore, hyphen, dan titik.
   - Mengganti spasi dan ganti baris dengan hyphen.
   - Semua huruf dijadikan huruf kecil.
   - Semua karakter aneh dihapus sampai huruf pertama (id tidak boleh diawali angka atau tanda baca).
